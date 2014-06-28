@@ -19,8 +19,9 @@ GITHUB
 //Merge pull request
 
 //Reference task and pull request in empty commit message
-git commit -m "#task-(444)" --allow-empty
+git commit -m "#task-(32735)" --allow-empty
 git commit -m "#pr-(444)" --allow-empty
+
 
 //Run release script
 
@@ -44,12 +45,12 @@ Merge release changes back to develop
 
 /<development site>
 //refresh and checkout release
-git checkout release/0.1.0
-git pull --rebase origin release/0.1.0
+git checkout release/v1.0.04
+git pull --rebase origin release/v1.0.04
 //refresh and checkout develop
 git checkout develop
 git pull --rebase origin develop
-git merge --no-ff release/0.1.0 
+git merge --no-ff release/v1.0.04 
 git log
 git checkout -b fix/release_fixes_[date]
 push and merge branch into github develop.
