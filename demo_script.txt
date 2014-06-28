@@ -1,0 +1,61 @@
+//Make three changes
+  git checkout develop
+  git pull --rebase origin develop
+  git checkout -b fix/changes1
+  //edit
+  git add .
+  git commit -m "$ some technical message"
+  git push origin fix/changes1
+
+//Create pull request
+GITHUB 
+//Correct pull request
+  git checkout fix/changes1
+  git pull origin fix/changes1
+  //edit
+  git add .
+  git commit -m "no prefix"
+  git push origin fix/changes1
+//Merge pull request
+
+//Reference task and pull request in empty commit message
+git commit -m "#task-(32735)" --allow-empty
+git commit -m "#pr-(444)" --allow-empty
+
+
+//Run release script
+
+Merge release branch into master
+
+git checkout release/1.0.03
+git pull --rebase origin release/1.0.03
+
+git checkout master
+git pull --rebase origin master
+git merge --no-ff release/1.0.03
+git push origin master
+
+Tag Master
+
+git tag r1.0.03 -a -m 'Release of 1.0.03'
+git push origin r1.0.03 //pushing the tag
+
+
+Merge release changes back to develop
+
+/<development site>
+//refresh and checkout release
+git checkout release/v1.0.04
+git pull --rebase origin release/v1.0.04
+//refresh and checkout develop
+git checkout develop
+git pull --rebase origin develop
+git merge --no-ff release/v1.0.04 
+git log
+git checkout -b fix/release_fixes_[date]
+push and merge branch into github develop.
+
+
+rinse and repeat cycle
+
+
